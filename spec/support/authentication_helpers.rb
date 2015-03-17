@@ -12,4 +12,15 @@ RSpec.configure do |c|
   c.include AuthenticationHelpers, type: :feature
 end
 
-# This file is not connecting to my features files.
+module AuthHelpers
+  def sign_in(user)
+     session[:user_id] = user.id
+  end
+end
+
+RSpec.configure do |c|
+	c.include AuthHelpers, type: :controller
+end
+
+# This file is not connecting to my features files.  
+# Fix this by uncommenting line in rails_helper.rb!
