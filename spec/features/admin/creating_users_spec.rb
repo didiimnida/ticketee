@@ -28,5 +28,7 @@ feature "Creating Users" do
     within("#users") do
       expect(page).to have_content("admin@example.com (Admin)")
     end
+  end
 end
-end
+
+
