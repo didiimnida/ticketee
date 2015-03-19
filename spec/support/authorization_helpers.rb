@@ -11,3 +11,7 @@ RSpec.configure do |c|
 end
 
 #Why use an AuthorizationHelper here instead of a Factory to create a permission?
+
+def check_permission_box(permission, object)
+  check "permissions_#{object.id}_#{permission}"
+end
