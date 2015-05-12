@@ -22,7 +22,7 @@ RSpec.describe TicketsController, type: :controller do
     			sign_in(user)
     			define_permission!(user, "view", project)
   			end
-  			
+
   			def cannot_create_tickets!
     			response.should redirect_to(project)
     			message = "You cannot create tickets on this project."
@@ -35,7 +35,7 @@ RSpec.describe TicketsController, type: :controller do
 											"on this project.")
 			end
 
- 			
+
  			it "cannot begin to create a ticket" do
    			 	get :new, project_id: project.id
     			cannot_create_tickets!
@@ -44,7 +44,7 @@ RSpec.describe TicketsController, type: :controller do
  			it "cannot create a ticket without permission" do
     			post :create, project_id: project.id
     			cannot_create_tickets!
-			end 
+			end
 
 			it "cannot edit a ticket without permission" do
 				get :edit, {project_id: project.id, id: ticket.id}

@@ -3,10 +3,10 @@ require 'rails_helper'
 feature "Deleting tickets" do
 	let!(:project) {FactoryGirl.create(:project)}
 	let!(:user) {FactoryGirl.create(:user)}
-  	let!(:ticket) { 
+  	let!(:ticket) {
     	FactoryGirl.create(:ticket, project: project, user: user)}
 
-	before do 
+	before do
 		define_permission!(user, "view", project)
 		define_permission!(user, "delete tickets", project)
 		sign_in_as!(user)

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'Creating Projects' do
-	before do 
-		
+	before do
+
 		sign_in_as!(FactoryGirl.create(:admin_user))
 
 		visit '/'
@@ -15,7 +15,7 @@ feature 'Creating Projects' do
 		click_button 'Create Project'
 
 		expect(page).to have_content('Project has been created.')
-		
+
 		project = Project.where(name: "TextMate 2").first
 
 		expect(page.current_url).to eql(project_url(project))

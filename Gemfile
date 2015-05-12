@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'cancan'
+
+gem 'carrierwave'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -34,7 +36,7 @@ gem 'cancan'
 # gem 'capistrano-rails', group: :development
 
 group :test, :development do
-  gem 'rspec-rails' 
+  gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -42,7 +44,7 @@ group :test, :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring', '1.3.3'
 end
 
 group :test do

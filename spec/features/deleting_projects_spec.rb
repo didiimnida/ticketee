@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "Deleting projects" do
-	before do 
+	before do
 		sign_in_as!(FactoryGirl.create(:admin_user))
 	end
 

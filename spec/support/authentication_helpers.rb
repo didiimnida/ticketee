@@ -5,7 +5,7 @@ module AuthenticationHelpers
     fill_in "Password", with: user.password
     click_button 'Sign in'
     expect(page).to have_content("Signed in successfully.")
-  end 
+  end
 end
 
 RSpec.configure do |c|
@@ -22,5 +22,5 @@ RSpec.configure do |c|
 	c.include AuthHelpers, type: :controller
 end
 
-# This file is not connecting to my features files.  
+# This file is not connecting to my features files.
 # Fix this by uncommenting line in rails_helper.rb!

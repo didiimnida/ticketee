@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
 		@ticket = @project.tickets.build
 	end
 
-	def create 
+	def create
 		@ticket = @project.tickets.build(ticket_params)
 		@ticket.user = current_user
 		if @ticket.save
@@ -49,7 +49,7 @@ class TicketsController < ApplicationController
 	def set_project
 		@project = Project.for(current_user).find(params[:project_id])
 	rescue ActiveRecord::RecordNotFound
-		flash[:alert] = "The project you were looking " + 
+		flash[:alert] = "The project you were looking " +
 						"for could not be found."
 
 		redirect_to root_path
@@ -60,7 +60,7 @@ class TicketsController < ApplicationController
 	end
 
 	def ticket_params
-		params.require(:ticket).permit(:title, :description)
+		params.require(:ticket).permit(:title, :description, :asset)
 	end
 
 	def authorize_create!
